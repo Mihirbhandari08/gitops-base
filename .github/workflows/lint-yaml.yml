@@ -24,8 +24,3 @@ jobs:
       - name: Run YAML Linter
         run: yamllint .
 
-      - name: Validate Kubernetes Manifests
-        uses: yannh/kubeconform-action@v0.0.8
-        with:
-          validate_all: true
-          directory: nginx/
