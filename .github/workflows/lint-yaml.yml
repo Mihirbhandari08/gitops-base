@@ -25,7 +25,7 @@ jobs:
         run: yamllint .
 
       - name: Validate Kubernetes Manifests
-        uses: instrumenta/kubeval-action@master
+        uses: yannh/kubeconform-action@v0.0.8
         with:
           validate_all: true
           directory: nginx/
