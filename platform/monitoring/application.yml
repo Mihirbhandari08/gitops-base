@@ -11,18 +11,17 @@ spec:
       targetRevision: 86.1.0
       helm:
         valueFiles:
-        - $values/platform/monitoring/values.yml
-    - repoURL: https://grafana.github.io/helm-charts
-      chart: grafana
+          - $values/platform/monitoring/values.yml
+
+    - repoURL: https://github.com/Mihirbhandari08/gitops-base.git
       targetRevision: HEAD
-      helm:
-        valueFiles:
-        - $values/platform/monitoring/values.yml
+      ref: values                  # ← this defines $values!
+
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: monitoring
+
   syncPolicy:
     automated:
       prune: true
-      selfHeal: true 
-
+      selfHeal: true
