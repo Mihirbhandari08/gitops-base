@@ -6,10 +6,10 @@ metadata:
 
 spec:
   ignoreDifferences:
-    - group: apps
-      kind: Deployment
+    - group: argoproj.io
+      kind: Application
       jsonPointers:
-        - /spec/replicas/repoUrl
+        - /spec/source/repoUrl
   project: default 
   source:
     repoURL: https://github.com/Mihirbhandari08/gitops-base.git 
