@@ -12,6 +12,9 @@ spec:
       helm:
         valueFiles:
           - $values/environments/dev/values.yaml
+    - repoURL: https://github.com/Mihirbhandari08/gitops-base.git
+      targetRevision: HEAD
+      ref: values 
   
   destination:
     server: 'https://kubernetes.default.svc'
