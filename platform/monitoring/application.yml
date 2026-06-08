@@ -5,17 +5,24 @@ metadata:
   namespace: argocd
 spec:
   project: default
-  source:
-    repoURL: https://prometheus-community.github.io/helm-charts
-    chart: kube-prometheus-stack
-    targetRevision: 86.1.0
-    helm:
-      valueFiles:
-        - platform/monitoring/values.yml
-    destination:
-      server: 'https://kubernetes.default.svc'
-      namespace: monitoring
+  sources:
+    - repoURL: https://prometheus-community.github.io/helm-charts
+      chart: kube-prometheus-stack
+      targetRevision: 86.1.0
+      helm:
+        valueFiles:
+        - $values/platform/monitoring/values.yml
+    - repoURL: https://grafana.github.io/helm-charts
+      chart: grafana
+      targetRevision: HEAD
+      helm:
+        valueFiles:
+        - $values/platform/monitoring/values.yml
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: monitoring
   syncPolicy:
     automated:
-      prune: true 
+      prune: true
+      selfHeal: true 
 
