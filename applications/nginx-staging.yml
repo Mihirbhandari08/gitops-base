@@ -6,12 +6,12 @@ metadata:
 spec:
   project: default
   sources:
-    repoURL: https://github.com/Mihirbhandari08/gitops-base.git
-    targetRevision: HEAD
-    path: nginx
-    helm:
-      valueFiles:
-        - $values/environments/staging/values.yaml 
+    - repoURL: https://github.com/Mihirbhandari08/gitops-base.git
+      targetRevision: HEAD
+      path: nginx
+      helm:
+        valueFiles:
+          - $values/environments/staging/values.yaml 
   
   destination:
     server: 'https://kubernetes.default.svc'
