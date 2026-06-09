@@ -3,7 +3,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: nginx-active
-  namespace: blue-green
+  namespace: rollout-blue-green
 spec:
   selector:
     app: nginx
@@ -17,7 +17,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: nginx-preview
-  namespace: blue-green
+  namespace: rollout-blue-green
 spec:
   selector:
     app: nginx
