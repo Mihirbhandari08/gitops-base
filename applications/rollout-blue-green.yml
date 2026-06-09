@@ -1,20 +1,20 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name:  rollout-blue-green
-  namespace: argocd
-spec:
-  project: default
-  source:
-    repoURL:  https://github.com/Mihirbhandari08/gitops-base.git
-    targetRevision: HEAD
-    path:  rollout/blue-green
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: rollout-blue-green
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name:  rollout-blue-green
+#   namespace: argocd
+# spec:
+#   project: default
+#   source:
+#     repoURL:  https://github.com/Mihirbhandari08/gitops-base.git
+#     targetRevision: HEAD
+#     path:  rollout/blue-green
+#   destination:
+#     server: https://kubernetes.default.svc
+#     namespace: rollout-blue-green
+#   syncPolicy:
+#     automated:
+#       prune: true
+#       selfHeal: true
+#     syncOptions:
+#       - CreateNamespace=true
