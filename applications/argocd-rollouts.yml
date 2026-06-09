@@ -1,6 +1,6 @@
 apiVersion:  argoproj.io/v1alpha1
 kind: Application
-metadataL:
+metadata:
   name: argocd-rollouts
   namespace: argocd
 spec:
