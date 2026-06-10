@@ -1,5 +1,12 @@
+# Fixes the image pull by pointing to the working AWS ECR mirror
+global:
+  imageRegistry: public.ecr.aws
+
 cleanupController:
   enabled: true
+  # Alternatively, if your chart version supports explicit block overrides:
+  # image:
+  #   registry: public.ecr.aws
 
 upgradeJob:
   enabled: false    # ← disable the post upgrade hook
