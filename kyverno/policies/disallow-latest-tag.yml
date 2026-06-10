@@ -11,6 +11,15 @@ spec:
           - resources:
               kinds:
                 - Pod
+      exclude:
+        any:
+          - resources:
+              kinds:
+                - Pod
+              namespaces:
+                - kube-system   # ← allow latest tag in kube-system 
+                - kyverno       # ← allow latest tag in kyverno namespace (for testing)
+                - argocd         # ← allow latest tag in argocd namespace (for testing)
       validate:
         message: "Using 'latest' tag is not allowed! Please use a specific image tag."
         pattern:

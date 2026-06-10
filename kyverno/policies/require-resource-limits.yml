@@ -11,6 +11,15 @@ spec:
           - resources:
               kinds:
                 - Pod
+      exclude:
+        any:
+          - resources:
+              kinds:
+                - Pod
+              namespaces:
+                - kube-system   # ← allow no limits in kube-system 
+                - kyverno       # ← allow no limits in kyverno namespace (for testing)
+                - argocd         # ← allow no limits in argocd namespace (for testing)
       validate:
         message: "Resource limits (CPU and memory) are required for all containers!"
         pattern:
