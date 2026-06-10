@@ -1,0 +1,5 @@
+cleanupController:
+  enabled: true
+
+upgradeJob:
+  enabled: false    # ← disable the post upgrade hook
