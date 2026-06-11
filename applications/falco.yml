@@ -18,7 +18,9 @@ spec:
           webui:
             enabled: true
             redis:
-              enabled: false
+              storageEnabled: true
+              persistence:
+                enabled: false
         jsonOutput: true
         log_stderr: true
         log_syslog: false
