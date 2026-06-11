@@ -14,7 +14,7 @@ spec:
         driver:
           kind:  modern_ebpf
         falcosidekick:
-          enabled: true
+          enabled: false
         jsonOutput: true
         log_stderr: true
         log_syslog: false
