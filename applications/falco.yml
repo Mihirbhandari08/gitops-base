@@ -15,6 +15,14 @@ spec:
           kind:  modern_ebpf
         falconsidekick:
           enabled: true
+        falco:
+          falco:
+            jsonOutput: true
+            log_stderr: true
+            log_syslog: false
+            output_timeout: 2000
+            stdout_output:
+              enabled: true
   destination:
     server: https://kubernetes.default.svc
     namespace: falco
