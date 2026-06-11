@@ -13,13 +13,14 @@ spec:
       values: |
         driver:
           kind:  modern_ebpf
-        falconsidekick:
-            jsonOutput: true
-            log_stderr: true
-            log_syslog: false
-            output_timeout: 2000
-            stdout_output:
-              enabled: true
+        falcosidekick:
+          enabled: true
+        jsonOutput: true
+        log_stderr: true
+        log_syslog: false
+        output_timeout: 2000
+        stdout_output:
+          enabled: true
   destination:
     server: https://kubernetes.default.svc
     namespace: falco
